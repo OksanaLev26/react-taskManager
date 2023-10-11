@@ -1,0 +1,47 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.description {
+    margin-bottom: 10px;
+}
+
+.user {
+    width: 24px;
+    height: 24px;
+}
+
+.dueDate {
+    font-weight: 600;
+    margin-bottom: 5pxpx;
+}
+
+.footerTask {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footerImg {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}

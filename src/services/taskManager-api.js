@@ -3,8 +3,15 @@ import axios from "axios";
 const baseURL = "http://localhost:3001";
 
 // Show all
-export const getTasks = () => {
-  return axios.get(baseURL);
+export const  getTasks = async () => {
+  try {
+    const response = await axios.get(baseURL);
+    console.log('response', response);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+  
 };
 
 // Show one
@@ -18,8 +25,8 @@ export const editTask = (id, updatedTask) => {
 };
 
 // Create
-export const createTask = (todo) => {
-  return axios.post(baseURL, todo);
+export const createTask = (task) => {
+  return axios.post(baseURL, task);
 };
 
 // Delete

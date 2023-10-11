@@ -1,0 +1,33 @@
+.createForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 24px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.linkStyles {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    /* font-size: 20px; */
+}
+
+.buttonStyles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 45px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+    margin-top: 20px;
+    /* font-size: 20px; */
+    background-color: white;
+}
