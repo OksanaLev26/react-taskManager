@@ -4,6 +4,10 @@
     width: 100wh;
 }
 
+.all {
+    display: flex;
+}
+
 .newTitle {
     display: flex;
     justify-content: space-between;
@@ -23,7 +27,6 @@ h2 {
 }
 
 .item {
-    /* margin: 24px; */
     padding: 15px;
     height: 100vh;
     width: 25%;

@@ -6,7 +6,6 @@ const baseURL = "http://localhost:3001";
 export const  getTasks = async () => {
   try {
     const response = await axios.get(baseURL);
-    console.log('response', response);
     return response.data;
   } catch (error) {
     console.log(error);

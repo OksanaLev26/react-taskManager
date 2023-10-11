@@ -1,0 +1,90 @@
+.editFormContainer {
+    background-image: linear-gradient(to right top, #470a5e, #004fae, #0085ca, #00b2a0, #15d64b);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 24px;
+}
+
+.titleEdit {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+}
+
+label {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+input, textarea {
+    border: 2px solid #470A5E;
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    font-size: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.linkStyles {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    /* font-size: 20px; */
+}
+
+.buttonStyles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid #470A5E;
+    border-radius: 8px;
+    color: black;
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: white;
+}
+
+.right {
+    margin-left: 24px;
+}
+
+@media (max-width: 768px) {
+    .editForm {
+        width: 100%;
+    }
+    .titleEdit {
+        font-size: 25px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, textarea {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .buttonStyles {
+        font-size: 16px;
+        height: 40px;
+    }
+}

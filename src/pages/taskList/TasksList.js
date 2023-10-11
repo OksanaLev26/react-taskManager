@@ -8,18 +8,15 @@ import {
 } from "@hello-pangea/dnd";
 
 import { Task } from "../../components/task/Task";
-import { deleteTask, getTasks } from "../../services/taskManager-api";
+import { deleteTask } from "../../services/taskManager-api";
 import { camalize, getAllTasks, move } from "../../utilities/utils";
-import { EditTask } from "../editTask/EditTask";
 import "./taskList.css";
 
 export const TasksList = () => {
   const [tasks, setTasks] = useState(null);
 
   const handleDeleteClick = (task) => {
-    console.log("task._id", task._id);
     deleteTask(task._id);
-    console.log("tasks", tasks);
     getAllTasks(setTasks);
   };
 
@@ -27,21 +24,15 @@ export const TasksList = () => {
     if (!result.destination) return;
     let task = {};
     const droppableArr = Object.values(tasks).find((value) => {
-      console.log("key", value);
       task = value.find((item) => item._id === result.draggableId);
       return task;
     });
-    console.log("droppableArr", droppableArr);
     let nextDroppableArr = [...droppableArr];
     const fromIndex = result.source.index;
     const toIndex = result.destination.index;
     nextDroppableArr = move(nextDroppableArr, fromIndex, toIndex);
-    console.log("task", task);
     const key = camalize(task.status);
-    console.log("key", key);
     tasks[key] = nextDroppableArr;
-    console.log("tasks", tasks);
-    console.log("onDragEnd", result);
   };
 
   useEffect(() => {
@@ -76,7 +67,6 @@ export const TasksList = () => {
                           <div
                             key={task._id}
                             ref={provided.innerRef}
-                            // isdragging={snapshot.isDragging}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
@@ -111,7 +101,6 @@ export const TasksList = () => {
                           <div
                             key={task._id}
                             ref={provided.innerRef}
-                            // isdragging={snapshot.isDragging}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
@@ -146,7 +135,6 @@ export const TasksList = () => {
                           <div
                             key={task._id}
                             ref={provided.innerRef}
-                            // isdragging={snapshot.isDragging}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
@@ -181,7 +169,6 @@ export const TasksList = () => {
                           <div
                             key={task._id}
                             ref={provided.innerRef}
-                            // isdragging={snapshot.isDragging}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
@@ -216,7 +203,6 @@ export const TasksList = () => {
                           <div
                             key={task._id}
                             ref={provided.innerRef}
-                            // isdragging={snapshot.isDragging}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >

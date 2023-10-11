@@ -12,7 +12,6 @@ export const EditTask = () => {
 
   useEffect(() => {
     getTask(id).then((res) => {
-      console.log("res", res);
       setTask(res.data);
     });
   }, []);
@@ -27,7 +26,6 @@ export const EditTask = () => {
       dueDate: e.target.dueDate.value,
     };
 
-    console.log('updatedTask', updatedTask)
     editTask(task._id, updatedTask).then((res) => nav(`/`));
   };
 
@@ -38,43 +36,38 @@ export const EditTask = () => {
   return (
     <>
       {task ? (
-        <div className="editFormForm">
+        <div className="editFormContainer">
           <form className="editForm" onSubmit={handleSubmit}>
-            <h2>Edit Task</h2>
+            <div className="titleEdit">Edit Task</div>
             <label>Title:</label>
             <input
               type="text"
               name="title"
               defaultValue={task?.title}
-              // onChange={handleChange}
             ></input>
             <label>User name:</label>
             <input
               type="text"
               name="user"
               defaultValue={task?.user}
-              // onChange={handleChange}
             ></input>
             <label>Description:</label>
-            <input
+            <textarea
               type="text"
               name="description"
               defaultValue={task?.description}
-              // onChange={handleChange}
-            ></input>
+            ></textarea>
             <label>Due Date: </label>
             <input
               type="text"
               name="dueDate"
               defaultValue={task?.dueDate}
-              // onChange={handleChange}
             ></input>
             <label>Status: </label>
             <input
               type="text"
               name="status"
               defaultValue={task?.status}
-              // onChange={handleChange}
             ></input>
             <div className="footer">
               <a className="linkStyles" href="/">
@@ -83,12 +76,11 @@ export const EditTask = () => {
               <button className="buttonStyles" onClick={handleClearClick}>
                 Clear All
               </button>
-              <button className="buttonStyles" type="submit">
+              <button className="buttonStyles right" type="submit">
                 Edit Task
               </button>
             </div>
           </form>
-          {/* <div>{values.error}</div> */}
         </div>
       ) : (
         <div>Loading...</div>

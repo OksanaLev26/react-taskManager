@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "./createTask.css";
+
 import { createTask } from "../../services/taskManager-api";
+import { useNavigate } from "react-router-dom";
+import "./createTask.css";
 
 export const CreateTask = () => {
   const [values, setValues] = useState({
@@ -12,10 +14,12 @@ export const CreateTask = () => {
   });
   const [error, setError] = useState(null);
 
+  const nav = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      createTask(values);
+      createTask(values).then((res) => nav(`/`));
       setValues({
         title: "",
         user: "",
@@ -23,12 +27,9 @@ export const CreateTask = () => {
         dueDate: "",
         status: "",
       });
-      console.log("values", values);
     } catch (error) {
       setError(error);
     }
-
-    console.log("submit", values);
   };
 
   const handleChange = (e) => {
@@ -49,9 +50,9 @@ export const CreateTask = () => {
   };
 
   return (
-    <div className="createForm">
+    <div className="createFormContainer">
       <form className="createForm" method="post" onSubmit={handleSubmit}>
-        <h2>Create New Task</h2>
+        <div className="titleCreate">Create New Task</div>
         <label>Title:</label>
         <input
           type="text"
@@ -67,12 +68,12 @@ export const CreateTask = () => {
           onChange={handleChange}
         ></input>
         <label>Description:</label>
-        <input
+        <textarea
           type="text"
           name="description"
           value={values.description}
           onChange={handleChange}
-        ></input>
+        ></textarea>
         <label>Due Date: </label>
         <input
           type="text"
@@ -94,8 +95,8 @@ export const CreateTask = () => {
           <button className="buttonStyles" onClick={handleClearClick}>
             Clear All
           </button>
-          <button className="buttonStyles" type="submit">x
-            Create New Task
+          <button className="buttonStyles right" type="submit">
+            Create
           </button>
         </div>
       </form>
