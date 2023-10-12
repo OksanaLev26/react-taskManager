@@ -27,3 +27,4 @@ npm install
 npm start
 
 The app will be available at [http://localhost:3000].
+Deployed app is available at [https://test-deploy-client-jr6y.onrender.com/].
