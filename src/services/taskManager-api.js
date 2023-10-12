@@ -1,6 +1,7 @@
 import axios from "axios";
 // const baseURL = '';
-const baseURL = "http://localhost:3001";
+const baseURL = "https://test-deploy-server-8qyd.onrender.com";
+// const baseURL = "http://localhost:3001";
 
 // Show all
 export const  getTasks = async () => {
