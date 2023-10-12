@@ -4,50 +4,8 @@
     width: 100wh;
 }
 
-.all {
-    display: flex;
-}
-
-.newTitle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 .addImg {
     width: 24px;
     height: 24px;
     cursor: pointer;
-}
-
-.item {
-    padding: 15px;
-    height: 100vh;
-    width: 25%;
-}
-
-.new {
-    background-color: coral;
-}
-
-.inProgress {
-    background-color: rgb(73, 73, 234);
-}
-
-.onHold {
-    background-color: rgb(161, 82, 234);
-}
-
-.readyForQA {
-    background-color: aqua;
-}
-
-.done {
-    background-color: chartreuse;
 }

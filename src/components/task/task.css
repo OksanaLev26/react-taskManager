@@ -17,6 +17,12 @@
     margin-bottom: 10px;
 }
 
+.main-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .title {
     font-weight: 600;
 }
