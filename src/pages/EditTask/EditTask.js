@@ -18,6 +18,7 @@ export const EditTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     const updatedTask = {
       title: e.target.title.value,
       user: e.target.user.value,
@@ -27,10 +28,6 @@ export const EditTask = () => {
     };
 
     editTask(task._id, updatedTask).then((res) => nav(`/`));
-  };
-
-  const handleClearClick = () => {
-    setTask(null);
   };
 
   return (
@@ -73,9 +70,6 @@ export const EditTask = () => {
               <a className="linkStyles" href="/">
                 <div className="buttonStyles">Back</div>
               </a>
-              <button className="buttonStyles" onClick={handleClearClick}>
-                Clear All
-              </button>
               <button className="buttonStyles right" type="submit">
                 Edit Task
               </button>
