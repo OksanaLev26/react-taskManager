@@ -67,6 +67,7 @@ input, textarea {
 }
 
 @media (max-width: 768px) {
+    
     .editForm {
         width: 100%;
     }
